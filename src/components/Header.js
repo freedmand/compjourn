@@ -8,7 +8,7 @@ import Hamburger from './Hamburger';
 import SyllabusLogo from './SyllabusLogo';
 import AboutLogo from './AboutLogo';
 import Nav from './Nav';
-import { Link } from 'react-router-dom';
+import Link from './Link';
 
 export default function Header() {
   const { theme, toggleSidebarExpanded } = useContext(ThemeContext);
@@ -20,11 +20,11 @@ export default function Header() {
       <span onClick={toggleSidebarExpanded} css={{ marginRight: toRem(25), display: 'none', [styles.breaks.tablet]: { display: 'inline-block' }, ...styles.buttonLike }}>
         <Hamburger />
       </span>
-      <Link to="/" css={{ ...styles.buttonLike }}>
+      <Link to="/">
         <span css={{ ...styles.middleInline, paddingRight: toRem(15) }}>
           <Logo width={logoSize} height={logoSize} />
         </span>
-        <h1 css={{ ...styles.middleInline, color: theme.colors.body, paddingRight: toRem(52), margin: 0, fontSize: styles.fontSizes.logo }}>Computational Journalism</h1>
+        <h1 css={{ ...styles.middleInline, color: theme.colors.body, paddingRight: toRem(52), margin: 0, fontSize: styles.fontSizes.logo, [styles.breaks.mobile]: { fontSize: styles.fontSizes.logoSmall, paddingRight: 0 } }}>Computational Journalism</h1>
       </Link>
       <nav css={{ ...styles.middleInline, [styles.breaks.tablet]: { display: 'none' } }}>
         <Nav logo={SyllabusLogo} to="/syllabus">Syllabus</Nav>

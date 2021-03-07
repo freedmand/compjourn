@@ -9,16 +9,34 @@ export function H1({ children }) {
   return <h1 css={{ color: theme.colors.body, fontSize: styles.fontSizes.h1 }}>{children}</h1>
 }
 
+export function H2({ children }) {
+  const { theme } = useContext(ThemeContext);
+
+  return <h2 css={{ color: theme.colors.body, fontSize: styles.fontSizes.h2 }}>{children}</h2>
+}
+
+export function H3({ children }) {
+  const { theme } = useContext(ThemeContext);
+
+  return <h3 css={{ color: theme.colors.body, fontSize: styles.fontSizes.h3 }}>{children}</h3>
+}
+
+export function H4({ children }) {
+  const { theme } = useContext(ThemeContext);
+
+  return <h3 css={{ color: theme.colors.body, fontSize: styles.fontSizes.h4 }}>{children}</h3>
+}
+
 export function Img({ alt, src, banner = false }) {
   const imageMargin = toRem(22);
   const imageBannerMargin = toRem(15);
   return <img css={{ width: '100%', maxWidth: toRem(745), marginLeft: -imageMargin, marginRight: -imageMargin, marginTop: banner ? imageBannerMargin : 0, marginBottom: banner ? imageBannerMargin : 0 }} alt={alt} src={src} />
 }
 
-export function P({ children }) {
+export function P({ children, big = false }) {
   const { theme } = useContext(ThemeContext);
 
-  return <p css={{ fontSize: styles.fontSizes.body, color: theme.colors.body, lineHeight: styles.lineHeight }}>{children}</p>
+  return <p css={{ fontSize: big ? styles.fontSizes.body : styles.fontSizes.bodySmaller, color: theme.colors.body, lineHeight: styles.lineHeight }}>{children}</p>
 }
 
 export function BlockQuote({ quote, attribution }) {

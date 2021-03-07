@@ -15,8 +15,6 @@ const fontBreaks = [
   [1200, 14],
   [1100, 13],
   [430, 12],
-  [390, 11],
-  [350, 10]
 ];
 const mediaQueries = {};
 fontBreaks.forEach(([maxWidth, fontSize]) => {

@@ -35,15 +35,18 @@ export const styles = {
   retractedSidebarWidth: toRem(-380),
   lineHeight: 1.5,
   fontSizes: {
-    logo: toRem(22), //
-    headerLinks: toRem(18),  //
-    sidebarLinks: toRem(19),  //
-    h1: toRem(51),  //
-    body: toRem(20),  //
+    logo: toRem(22),
+    logoSmall: toRem(20),
+    headerLinks: toRem(18),
+    sidebarLinks: toRem(19),
+    h1: toRem(51),
+    h2: toRem(32),
+    h3: toRem(26),
+    h4: toRem(20),
+    body: toRem(20),
     bodySmaller: toRem(18),
-    blockQuote: toRem(28),  // 
-    attribution: toRem(18),  //
-    h2: toRem(26),
+    blockQuote: toRem(28),
+    attribution: toRem(18),
   },
   buttonLike: {
     cursor: 'pointer',

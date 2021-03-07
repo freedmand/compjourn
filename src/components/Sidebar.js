@@ -4,7 +4,8 @@ import { useContext, useState } from 'react';
 import { ThemeContext, styles, toRem } from '../theme';
 import SidebarArrow from './SidebarArrow';
 import DarkModeToggle from "react-dark-mode-toggle";
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Link from './Link';
 
 const topics = [
   ['Home', ''],
@@ -42,7 +43,7 @@ const sidebarSide = {
 }
 
 export default function Sidebar() {
-  const { theme, darkMode, setDarkMode, sidebarExpanded, setSidebarExpanded } = useContext(ThemeContext);
+  const { theme, darkMode, setDarkMode, sidebarExpanded } = useContext(ThemeContext);
   const [expandedStates, setExpandedStates] = useState({});
 
   const sidebarSideNested = {
@@ -79,11 +80,9 @@ export default function Sidebar() {
                 <span css={{ ...sidebarSide }}>
                   {topic[2] != null ? <SidebarArrow expanded={expanded} clickable={!topLevelSelected} onClick={() => setExpandedStates({ ...expandedStates, [topicUrl]: !expandedStates[topicUrl] })} /> : null}
                 </span>
-                <Link onClick={() => setSidebarExpanded(false)} to={topicUrl} css={{
+                <Link to={topicUrl} css={{
                   ...sidebarItem,
-                  ...styles.buttonLike,
-                  textDecoration: 'none',
-                  color: topLevelSelected || topicSelected ? theme.colors.theme : theme.colors.darkGray,
+                  color: topLevelSelected || topicSelected ? theme.colors.sidebarSelectedFg : theme.colors.darkGray,
                   background: topicSelected ? theme.colors.sidebarSelectedBg : null
                 }}>{topic[0]}</Link>
               </div>
@@ -96,10 +95,8 @@ export default function Sidebar() {
                     // Lower-level item
                     <div key={url}>
                       <span css={{ ...sidebarSide, ...sidebarSideNested, ...(isLast ? { transform: sidebarSideNested.transform + ' scaleY(0.7) translateY(-9px)' } : {}) }}></span>
-                      <Link onClick={() => setSidebarExpanded(false)} to={url} css={{
+                      <Link to={url} css={{
                         ...sidebarItem,
-                        ...styles.buttonLike,
-                        textDecoration: 'none',
                         color: selected ? theme.colors.sidebarSelectedFg : theme.colors.darkGray,
                         background: selected ? theme.colors.sidebarSelectedBg : null
                       }}>{subtopic[0]}</Link>

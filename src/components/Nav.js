@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { ThemeContext, styles, toRem } from '../theme';
+import Link from './Link';
 
 export default function Nav({ logo: Logo, children, to }) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Link to={to} css={{ ...styles.middleInline, padding: `0 ${toRem(39)}`, ...styles.buttonLike }}>
+    <Link to={to} css={{ ...styles.middleInline, padding: `0 ${toRem(39)}` }}>
       <span css={{ ...styles.middleInline, paddingRight: toRem(7) }}>
         {<Logo />}
       </span>
