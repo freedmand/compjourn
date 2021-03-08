@@ -1,7 +1,8 @@
 import React from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 const THEME_FG = '#29359B';
-const DARK_BG = '#3A3838';
+const DARK_BG = '#282b2f';
 
 export const toRem = px => `${px / 16}rem`;
 
@@ -66,7 +67,7 @@ export function getTheme(darkMode) {
       themeFaded: ['#A0A8F3', '#6F75A8'][colorIndex],
       sidebarSelectedBg: ['#EEF0FF', '#ADB5FF'][colorIndex],
       sidebarSelectedFg: [THEME_FG, DARK_BG][colorIndex],
-      body: ['#2E2E2E', '#FFFFFF'][colorIndex],
+      body: ['#2E2E2E', '#ECECEC'][colorIndex],
       orange: ['#DE5F17', '#FFB489'][colorIndex],
       green: ['#299B35', '#B6FFBD'][colorIndex],
       blue: ['#1368CC', '#9BDBFF'][colorIndex],
@@ -80,14 +81,14 @@ export function getTheme(darkMode) {
 }
 
 export const ThemeContext = React.createContext({
-  theme: getTheme(false),
+  theme: { colors: {} },
   setDarkMode: () => { },
   setSidebarExpanded: () => { }
 });
 
 
 export const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = React.useState(false);  // default to light mode
+  const [darkMode, setDarkMode] = useLocalStorage('darkmode', false);  // default to light mode
   const [sidebarExpanded, setSidebarExpanded] = React.useState(false);
   const theme = getTheme(darkMode);
   const toggleDarkMode = () => setDarkMode(!darkMode);
