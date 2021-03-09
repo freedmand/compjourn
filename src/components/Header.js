@@ -16,7 +16,13 @@ export default function Header() {
   const logoSize = toRem(34);
 
   return (
-    <header css={{ padding: `${toRem(19)} ${toRem(32)}` }}>
+    <header css={{
+      padding: `${toRem(19)} ${toRem(32)}`,
+      background: theme.colors.background,
+      position: 'sticky',
+      top: 0,
+      zIndex: 1,
+    }}>
       <span onClick={toggleSidebarExpanded} css={{ marginRight: toRem(25), display: 'none', [styles.breaks.tablet]: { display: 'inline-block' }, ...styles.buttonLike }}>
         <Hamburger />
       </span>

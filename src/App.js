@@ -38,19 +38,25 @@ export default function App() {
             fontFamily: `'Atkinson Hyperlegible', sans-serif`,
             transition: 'background 0.3s ease',
           },
-          '#root': {
-            overflow: 'hidden',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+          body: {
+            overflowX: 'hidden', // see https://stackoverflow.com/a/54116585
           },
+          // '#root': {
+          //   overflowX: 'hidden',
+          // },
+          // '#root': {
+          //   overflow: 'hidden',
+          //   position: 'fixed',
+          //   top: 0,
+          //   left: 0,
+          //   right: 0,
+          //   bottom: 0,
+          // },
           ...mediaQueries
         }}
       />
       <Header />
-      <div>
+      <div css={{ position: 'relative' }}>
         <Sidebar />
         <Body>
           <Switch>

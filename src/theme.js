@@ -11,12 +11,20 @@ export const styles = {
     display: 'inline-block',
     verticalAlign: 'middle',
   },
+  inlineTop: {
+    display: 'inline-block',
+    verticalAlign: 'top',
+  },
   pane: {
     position: 'absolute',
     bottom: 0,
-    overflowY: 'scroll',
+    overflowY: 'auto',
     overflowX: 'hidden',
-    top: toRem(74),
+    top: 0,
+    '> *': {
+      marginTop: toRem(74)
+    },
+    zIndex: -1
   },
   tableMiddleInline: {
     display: 'table-cell',
@@ -44,8 +52,8 @@ export const styles = {
     h2: toRem(32),
     h3: toRem(26),
     h4: toRem(20),
-    body: toRem(20),
-    bodySmaller: toRem(18),
+    bodyBigger: toRem(20),
+    body: toRem(18),
     blockQuote: toRem(28),
     attribution: toRem(18),
   },

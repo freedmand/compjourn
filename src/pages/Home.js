@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import BannerPng from '../images/banner.png';
-import { H1, Img, P, BlockQuote } from '../components/Elements';
+import { Img, BlockQuote } from '../components/Elements';
 import { ThemeContext, toRem, styles } from '../theme';
 import { useContext } from 'react';
 
@@ -12,11 +12,11 @@ function Column({ word, color, blurb, examples }) {
 
   return (
     <div css={{ display: 'table-cell', width: '33%', padding: `0 ${toRem(20)}`, color: theme.colors.body, fontSize: styles.fontSizes.bodySmaller, ...mobileBlock }}>
-      <h3 css={{ fontSize: styles.fontSizes.h3 }}>Stories <br /><span css={{ color }}>{word}</span> <br />algorithms</h3>
-      <p>{blurb}</p>
-      <p css={{ textTransform: 'uppercase', fontWeight: 'bold', fontSize: toRem(14) }}>Examples</p>
+      <h3 css={{ marginBottom: toRem(10) }}>Stories <br /><span css={{ color }}>{word}</span> <br />algorithms</h3>
+      <p css={{ lineHeight: `1.3 !important` }}>{blurb}</p>
+      <p css={{ textTransform: 'uppercase', fontWeight: 'bold', fontSize: `${toRem(14)} !important` }}>Examples</p>
       {examples.map((example, i) => (
-        <p key={i} css={{ [styles.breaks.mobile]: { margin: `${toRem(8)} 0 !important` } }}>{example}</p>
+        <p key={i} css={{ lineHeight: `1.3 !important`, [styles.breaks.mobile]: { margin: `${toRem(8)} 0 !important` } }}>{example}</p>
       ))}
     </div>
   )
@@ -37,11 +37,11 @@ export default function Home() {
 
   return (
     <>
-      <H1><span css={{ color: theme.colors.black }}>Welcome to</span><br /><span css={{ color: theme.colors.theme }}>computational journalism</span></H1>
+      <h1 css={{ marginTop: toRem(20) }}><span css={{ color: theme.colors.black }}>Welcome to</span><br /><span css={{ color: theme.colors.theme }}>computational journalism</span></h1>
       <Img banner={true} alt="Mosaic of data visualizations" src={BannerPng} width={1503} height={526} />
-      <P big={true}>Welcome! This is an envisioned course curriculum for Computational Journalism. The course is divided into three units — stories <i>by</i> algorithms, stories <i>through</i> algorithms, and stories <i>about</i> algorithms — highlighting the different ways journalism and computation intersect. The focus will be on practical toolbuilding and reporting, including learning how to construct applicable tools to facilitate story discovery and generation and deconstruct the algorithms that govern daily life.</P>
+      <p css={{ fontSize: `${styles.fontSizes.bodyBigger} !important` }}>Welcome! This is an envisioned course curriculum for Computational Journalism. The course is divided into three units — stories <i>by</i> algorithms, stories <i>through</i> algorithms, and stories <i>about</i> algorithms — highlighting the different ways journalism and computation intersect. The focus will be on practical toolbuilding and reporting, including learning how to construct applicable tools to facilitate story discovery and generation and deconstruct the algorithms that govern daily life.</p>
       <BlockQuote quote="“Computational journalism is stories by, through, and about algorithms”" attribution="— Stanford Journalism Program Director James T. Hamilton" />
-      <P>What does it mean to think of computational journalism in this way? Let’s break it down:</P>
+      <p>What does it mean to think of computational journalism in this way? Let’s break it down:</p>
       <Breakdown>
         <Column word="by" color={theme.colors.orange} blurb="Using algorithms to write stories" examples={[
           "Automatically generated sports/finance stories",
