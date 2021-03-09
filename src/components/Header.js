@@ -23,7 +23,7 @@ export default function Header() {
       top: 0,
       zIndex: 1,
     }}>
-      <span onClick={toggleSidebarExpanded} css={{ marginRight: toRem(25), display: 'none', [styles.breaks.tablet]: { display: 'inline-block' }, ...styles.buttonLike }}>
+      <span onClick={toggleSidebarExpanded} css={{ padding: toRem(16), margin: toRem(-16), marginRight: toRem(25 - 16), display: 'none', [styles.breaks.tablet]: { display: 'inline-block' }, ...styles.buttonLike }}>
         <Hamburger />
       </span>
       <Link to="/">
