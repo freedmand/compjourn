@@ -39,19 +39,19 @@ export default function App() {
             transition: 'background 0.3s ease',
           },
           body: {
-            overflowX: 'hidden', // see https://stackoverflow.com/a/54116585
+            overflow: 'hidden',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
           },
-          // '#root': {
-          //   overflowX: 'hidden',
-          // },
-          // '#root': {
-          //   overflow: 'hidden',
-          //   position: 'fixed',
-          //   top: 0,
-          //   left: 0,
-          //   right: 0,
-          //   bottom: 0,
-          // },
+          '#root': {
+            width: '100%',
+            height: '100%',
+            overflowY: 'auto',
+            overflowX: 'hidden'
+          },
           ...mediaQueries
         }}
       />

@@ -17,7 +17,7 @@ export default function Body({ children }) {
       fontSize: styles.fontSizes.bodySmaller,
       [styles.breaks.tablet]: {
         transform: sidebarExpanded ? `translateX(${styles.sidebarWidth})` : 'translateX(0)',
-        maxWidth: sidebarExpanded ? `calc(100% - ${styles.sidebarWidth})` : '100%',
+        maxWidth: '100%',
       },
       boxSizing: 'border-box',
       // Elements

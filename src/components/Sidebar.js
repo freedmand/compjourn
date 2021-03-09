@@ -89,7 +89,7 @@ export default function Sidebar() {
                     </span>
                     <Link to={topicUrl} css={{
                       ...sidebarItem,
-                      color: topLevelSelected || topicSelected ? theme.colors.sidebarSelectedFg : theme.colors.darkGray,
+                      color: topLevelSelected || topicSelected ? (topicSelected ? theme.colors.sidebarSelectedFg : theme.colors.sidebarTopLevelFg) : theme.colors.darkGray,
                       background: topicSelected ? theme.colors.sidebarSelectedBg : null
                     }}>{topic[0]}</Link>
                   </div>

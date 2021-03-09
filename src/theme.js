@@ -74,6 +74,7 @@ export function getTheme(darkMode) {
       theme: [THEME_FG, '#ADB5FF'][colorIndex],
       themeFaded: ['#A0A8F3', '#6F75A8'][colorIndex],
       sidebarSelectedBg: ['#EEF0FF', '#ADB5FF'][colorIndex],
+      sidebarTopLevelFg: [THEME_FG, '#ECECEC'][colorIndex],
       sidebarSelectedFg: [THEME_FG, DARK_BG][colorIndex],
       body: ['#2E2E2E', '#ECECEC'][colorIndex],
       orange: ['#DE5F17', '#FFB489'][colorIndex],
